@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         }else if(body.error === 0) {
             callback('The request is broken or Invalid', undefined)
         } else {
-            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees. There is a ${body.currently.precipProbability}% chance of rain`)
+            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees. The highest temperature today will be ${body.daily.data[0].temperatureHigh} degrees and the lowest temperature today will be ${body.daily.data[0].temperatureLow} degrees. There is a ${body.currently.precipProbability}% chance of rain.`)
         }
     })
 }
